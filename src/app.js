@@ -17,6 +17,6 @@ app.use(bodyParser.json())
 
 
 import userRoutes from "./routes/index.js";
-app.use('/', userRoutes)
+app.use('/api', userRoutes)
 
 export {app}
