@@ -22,7 +22,7 @@ export const register = async(req, res)=>{
         username,
         authentication: {
             salt,
-            passowrd: authentication(salt, password),
+            password: authentication(salt, password),
         }
     })
 
@@ -32,6 +32,7 @@ export const register = async(req, res)=>{
 
 
    } catch (error) {
+     console.log(error);    
      throw new ApiError(400, "authentication failed")
    } 
 }
