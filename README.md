@@ -17,8 +17,8 @@ To login user: http://localhost:4400/api/auth/login              [POST]
 
 To view all users: http://localhost:4400/api/users               [GET]
 
-To delete a user: http://localhost:4400/api/users/dlt/:id        [DELETE]   (replace id with the ' :id ' of the user) (user can only delete themselves and must be logged in)
+To delete a user: http://localhost:4400/api/users/dlt/:id        [DELETE]   (replace ' :id ' with the user's id in the url) (user can only delete themselves and must be logged in)
 
-To update username: http://localhost:4400/api/users/update/:id   [PATCH]   (replace id with the ' :id ' of the user) (user can only update themselves and must be logged in)
+To update username: http://localhost:4400/api/users/update/:id   [PATCH]   (replace ' :id ' with the user's id in the url) (user can only update themselves and must be logged in)
 
 
