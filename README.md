@@ -11,14 +11,14 @@ cookies: toDoAuth
 
 Server is running on http://localhost:4400/
 
-# To register user: http://localhost:4400/api/auth/register        [POST]
+To register user: http://localhost:4400/api/auth/register        [POST]
 
-# To login user: http://localhost:4400/api/auth/login              [POST]
+To login user: http://localhost:4400/api/auth/login              [POST]
 
-# To view all users: http://localhost:4400/api/users               [GET]
+To view all users: http://localhost:4400/api/users               [GET]
 
-# To delete a user: http://localhost:4400/api/users/dlt/:id        [DELETE]   (replace id with the ' :id ' of the user) (user can only delete themselves and must be logged in)
+To delete a user: http://localhost:4400/api/users/dlt/:id        [DELETE]   (replace id with the ' :id ' of the user) (user can only delete themselves and must be logged in)
 
-# To update username: http://localhost:4400/api/users/update/:id   [PATCH]   (replace id with the ' :id ' of the user) (user can only update themselves and must be logged in)
+To update username: http://localhost:4400/api/users/update/:id   [PATCH]   (replace id with the ' :id ' of the user) (user can only update themselves and must be logged in)
 
 
