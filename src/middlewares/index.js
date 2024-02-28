@@ -1,8 +1,9 @@
 import { getUserBySessionToken } from "../model/user.model.js";
 import { ApiError } from "../utils/ApiError.js";
+import { asyncHandler } from "../utils/asyncHandler.js";
 
 
-export const isOwner = async(req, _, next) => {
+export const isOwner = asyncHandler( async(req, _, next) => {
     try {
         const {id} = req.params
        
@@ -19,8 +20,8 @@ export const isOwner = async(req, _, next) => {
     } catch (error) {
         throw new ApiError(400, "error authenticating Admin")
     }
-}
-export const isAuthenticated = async(req, _, next) => {
+})
+export const isAuthenticated = asyncHandler( async(req, _, next) => {
 
     try {
         
@@ -42,4 +43,4 @@ export const isAuthenticated = async(req, _, next) => {
     } catch (error) {
         throw new ApiError(400, "authentication failed")
     }
-} 
+}) 

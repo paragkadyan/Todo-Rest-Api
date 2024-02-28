@@ -1,9 +1,10 @@
 import { deleteUserById, getUsers, updateUserById, getUserById } from "../model/user.model.js";
 import { ApiError } from "../utils/ApiError.js";
+import { asyncHandler } from "../utils/asyncHandler.js";
 
 
 
-export const getAllUsers = async(req, res) => {
+export const getAllUsers = asyncHandler(async(req, res) => {
     try {
         const users = await getUsers()
         
@@ -13,9 +14,9 @@ export const getAllUsers = async(req, res) => {
     } catch (error) {
         throw new ApiError(400, "something went wrong while fetching all users")
     }
-}
+})
 
-export const deleteUser = async(req, res) => {
+export const deleteUser = asyncHandler( async(req, res) => {
     try {
         const{ id } = req.params
 
@@ -28,9 +29,9 @@ export const deleteUser = async(req, res) => {
     } catch (error) {
         throw new ApiError(400, "failed to delete the user")
     }
-}
+})
 
-export const updateUser = async(req,res) => {
+export const updateUser = asyncHandler( async(req,res) => {
 
     try {
         
@@ -53,4 +54,4 @@ export const updateUser = async(req,res) => {
     } catch (error) {
         throw new ApiError(400, "updation failed")
     }
-}
+})

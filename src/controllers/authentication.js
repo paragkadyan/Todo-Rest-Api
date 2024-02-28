@@ -2,8 +2,9 @@ import express from 'express'
 import { getUserByEmail, createUser } from '../model/user.model.js'
 import {ApiError} from '../utils/ApiError.js'
 import {authentication, random} from '../utils/index.js'
+import { asyncHandler } from '../utils/asyncHandler.js'
 
-export const login = async(req,res)=> {
+export const login = asyncHandler( async(req,res)=> {
     try {
         const {email, password} = req.body
 
@@ -42,9 +43,9 @@ export const login = async(req,res)=> {
         console.log(error);
         throw new ApiError(400, "login failed")
     }
-}
+})
 
-export const register = async(req, res)=>{
+export const register = asyncHandler( async(req, res)=>{
    try {
     const {email, password, username} = req.body 
     if(!email || !password || !username) {
@@ -76,4 +77,4 @@ export const register = async(req, res)=>{
      console.log(error);    
      throw new ApiError(400, "authentication failed")
    } 
-}
+})
